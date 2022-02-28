@@ -16,6 +16,7 @@ class TarefaController extends Controller
     {
         $this->middleware('auth');
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -23,9 +24,6 @@ class TarefaController extends Controller
      */
     public function index()
     {
-
-        return 'estamos no index';
-
         $user_id = auth()->user()->id;
 
         $tarefas = Tarefa::where('user_id', $user_id)->paginate(10);
@@ -42,12 +40,8 @@ class TarefaController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-
-        //
-
+    {   
         return view('tarefa.create');
-
     }
 
     /**
@@ -58,9 +52,6 @@ class TarefaController extends Controller
      */
     public function store(Request $request)
     {
-
-        //
-
         $dados = $request->all('tarefa', 'data_limite_conclusao');
         $dados['user_id'] = auth()->user()->id;
 
@@ -80,9 +71,6 @@ class TarefaController extends Controller
      */
     public function show(Tarefa $tarefa)
     {
-
-        //
-
         return view('tarefa.show', [
             'tarefa' => $tarefa,
         ]);
@@ -97,10 +85,7 @@ class TarefaController extends Controller
      */
     public function edit(Tarefa $tarefa)
     {
-
-        //
-
-        if (!$tarefa->user_id ==  auth()->user()->id) {
+        if ($tarefa->user_id !=  auth()->user()->id) {
             return view('acesso-negado');
         }
         
@@ -119,10 +104,7 @@ class TarefaController extends Controller
      */
     public function update(Request $request, Tarefa $tarefa)
     {
-
-        //
-
-        if (!$tarefa->user_id == auth()->user()->id) {
+        if ($tarefa->user_id != auth()->user()->id) {
             return view('acesso-negado');
         }
         
@@ -139,10 +121,7 @@ class TarefaController extends Controller
      */
     public function destroy(Tarefa $tarefa)
     {
-
-        //
-
-        if (!$tarefa->user_id ==  auth()->user()->id) {
+        if ($tarefa->user_id !=  auth()->user()->id) {
             return view('acesso-negado');
         }
 
