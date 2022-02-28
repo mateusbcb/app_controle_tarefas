@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-
-
 use Mail;
 use App\Mail\NovaTarefaMail;
 
 use App\Models\Tarefa;
 use Illuminate\Http\Request;
+use App\Exports\TarefasExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class TarefaController extends Controller
 {
@@ -129,5 +129,10 @@ class TarefaController extends Controller
 
         return redirect()->route('tarefas.index')->with('success', 'Tarefa excluid com sucesso!');
 
+    }
+
+    public function exportacao()
+    {
+        return Excel::download(new TarefasExport, 'lista_de_tarefas.xlsx');
     }
 }
