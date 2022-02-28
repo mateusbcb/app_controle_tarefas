@@ -21,11 +21,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+<<<<<<< HEAD
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::resource('tarefas', TarefaController::class);
+=======
+Auth::routes(['verify' => true]);
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('verified');
+
+Route::resource('tarefas', TarefaController::class)->middleware('verified');
+>>>>>>> e20793dc502e16bb4f574ef710e30538363f4c24
 
 Route::get('/mensagem-teste', function () {
     return new MensagemTesteMail();

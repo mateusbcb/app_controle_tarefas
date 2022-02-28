@@ -576,6 +576,7 @@
         },
         {
             "name": "fruitcake/php-cors",
+<<<<<<< HEAD
             "version": "v1.0.1",
             "source": {
                 "type": "git",
@@ -595,12 +596,37 @@
             "require-dev": {
                 "phpstan/phpstan": "^1.4",
                 "phpunit/phpunit": "^7|^9",
+=======
+            "version": "v1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fruitcake/php-cors.git",
+                "reference": "58571acbaa5f9f462c9c77e911700ac66f446d4e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fruitcake/php-cors/zipball/58571acbaa5f9f462c9c77e911700ac66f446d4e",
+                "reference": "58571acbaa5f9f462c9c77e911700ac66f446d4e",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.4|^8.0",
+                "symfony/http-foundation": "^4.4|^5.4|^6"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "^1.4",
+                "phpunit/phpunit": "^9",
+>>>>>>> e20793dc502e16bb4f574ef710e30538363f4c24
                 "squizlabs/php_codesniffer": "^3.5"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
+<<<<<<< HEAD
                     "dev-main": "1.0-dev"
+=======
+                    "dev-main": "1.1-dev"
+>>>>>>> e20793dc502e16bb4f574ef710e30538363f4c24
                 }
             },
             "autoload": {
@@ -614,6 +640,13 @@
             ],
             "authors": [
                 {
+<<<<<<< HEAD
+=======
+                    "name": "Fruitcake",
+                    "homepage": "https://fruitcake.nl"
+                },
+                {
+>>>>>>> e20793dc502e16bb4f574ef710e30538363f4c24
                     "name": "Barryvdh",
                     "email": "barryvdh@gmail.com"
                 }
@@ -627,7 +660,11 @@
             ],
             "support": {
                 "issues": "https://github.com/fruitcake/php-cors/issues",
+<<<<<<< HEAD
                 "source": "https://github.com/fruitcake/php-cors/tree/v1.0.1"
+=======
+                "source": "https://github.com/fruitcake/php-cors/tree/v1.2.0"
+>>>>>>> e20793dc502e16bb4f574ef710e30538363f4c24
             },
             "funding": [
                 {
@@ -639,7 +676,11 @@
                     "type": "github"
                 }
             ],
+<<<<<<< HEAD
             "time": "2022-02-19T16:21:54+00:00"
+=======
+            "time": "2022-02-20T15:07:15+00:00"
+>>>>>>> e20793dc502e16bb4f574ef710e30538363f4c24
         },
         {
             "name": "graham-campbell/result-type",
@@ -6242,6 +6283,7 @@
         },
         {
             "name": "phar-io/version",
+<<<<<<< HEAD
             "version": "3.1.1",
             "source": {
                 "type": "git",
@@ -6252,6 +6294,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/phar-io/version/zipball/15a90844ad40f127afd244c0cad228de2a80052a",
                 "reference": "15a90844ad40f127afd244c0cad228de2a80052a",
+=======
+            "version": "3.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phar-io/version.git",
+                "reference": "4f7fd7836c6f332bb2933569e566a0d6c4cbed74"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phar-io/version/zipball/4f7fd7836c6f332bb2933569e566a0d6c4cbed74",
+                "reference": "4f7fd7836c6f332bb2933569e566a0d6c4cbed74",
+>>>>>>> e20793dc502e16bb4f574ef710e30538363f4c24
                 "shasum": ""
             },
             "require": {
@@ -6287,9 +6341,15 @@
             "description": "Library for handling version information and constraints",
             "support": {
                 "issues": "https://github.com/phar-io/version/issues",
+<<<<<<< HEAD
                 "source": "https://github.com/phar-io/version/tree/3.1.1"
             },
             "time": "2022-02-07T21:56:48+00:00"
+=======
+                "source": "https://github.com/phar-io/version/tree/3.2.1"
+            },
+            "time": "2022-02-21T01:04:05+00:00"
+>>>>>>> e20793dc502e16bb4f574ef710e30538363f4c24
         },
         {
             "name": "phpdocumentor/reflection-common",

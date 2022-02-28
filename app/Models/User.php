@@ -3,12 +3,20 @@
 namespace App\Models;
 
 use App\Notifications\RedefinirSenhaNotification;
+<<<<<<< HEAD
+=======
+use App\Notifications\VerificrEmailNotification;
+>>>>>>> e20793dc502e16bb4f574ef710e30538363f4c24
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
+<<<<<<< HEAD
 class User extends Authenticatable
+=======
+class User extends Authenticatable implements MustVerifyEmail
+>>>>>>> e20793dc502e16bb4f574ef710e30538363f4c24
 {
     use HasFactory, Notifiable;
 
@@ -46,4 +54,12 @@ class User extends Authenticatable
     {
         $this->notify(new RedefinirSenhaNotification($token, $this->email, $this->name));
     }
+<<<<<<< HEAD
+=======
+
+    public function sendEmailVerificationNotification()
+    {
+        $this->notify(new VerificrEmailNotification($this->name));
+    }
+>>>>>>> e20793dc502e16bb4f574ef710e30538363f4c24
 }
