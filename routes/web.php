@@ -28,7 +28,8 @@ Auth::routes(['verify' => true]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('verified');
 
-Route::get('/tarefas/exportacao', [TarefaController::class, 'exportacao'])->name('tarefas.exportacao')->middleware('verified');
+Route::get('/tarefas/exportar}', [TarefaController::class, 'exportar'])->name('tarefas.exportar')->middleware('verified');
+Route::get('/tarefas/exportacao/{extensao}', [TarefaController::class, 'exportacao'])->name('tarefas.exportacao')->middleware('verified');
 Route::resource('tarefas', TarefaController::class)->middleware('verified');
 
 

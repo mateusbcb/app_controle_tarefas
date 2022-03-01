@@ -9,6 +9,7 @@ use App\Models\Tarefa;
 use Illuminate\Http\Request;
 use App\Exports\TarefasExport;
 use Maatwebsite\Excel\Facades\Excel;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class TarefaController extends Controller
 {
@@ -131,8 +132,30 @@ class TarefaController extends Controller
 
     }
 
-    public function exportacao()
+    public function exportacao($extensao)
     {
-        return Excel::download(new TarefasExport, 'lista_de_tarefas.xlsx');
+        if (in_array($extensao, ['xlsx', 'csv', 'pdf'])) {
+            return Excel::download(new TarefasExport, 'lista_de_tarefas.'.$extensao);
+        }
+
+        return redirect()->route('tarefas.index')->with('error', 'Tipo de arquivo inválido!');
+    }
+
+    public function exportar()
+    {
+        $tarefas = auth()->user()->tarefas()->get();
+
+        $pdf = PDF::loadView('tarefa.pdf', [
+            'tarefas' => $tarefas,
+        ]);
+
+        /**
+         * 1 - tipo de papel - a4, letter, ect
+         * 2 - orientação - landscape (paisagem), portrait (retrato)
+         */
+        $pdf->setPaper('a4', 'portrait');
+
+        // return $pdf->download('lista_de_tarefas.pdf');
+        return $pdf->stream('lista_de_tarefas.pdf');
     }
 }
